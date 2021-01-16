@@ -1,0 +1,99 @@
+
+
+.busca-container {
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+
+  @include small {
+    padding-right: 60px;
+    text-align: right;
+  }
+
+  @include extra-small {
+    padding-right: 50px;
+    text-align: right;
+  }
+}
+
+.busca {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  width: 100%;
+  height: 32px;
+  margin: 41px 0 0 0;
+
+  $B: &;
+
+  @include small {
+    overflow: hidden;
+    width: 36px;
+    margin: 29px 0 0 0;
+  }
+
+  @include extra-small {
+    overflow: hidden;
+    width: 36px;
+    margin: 29px 0 0 0;
+  }
+
+  &--aberta {
+    width: 100%;
+  }
+
+  &__lupa {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: -5px;
+
+    @include small {
+      width: 26px;
+      height: 26px;
+    }
+
+    @include extra-small {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__campo {
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding: 0px;
+    margin: 0 0 0 10px;
+    vertical-align: top;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: #4D4D4D;
+    border: 0;
+    transition: border 0.2s ease-in-out;
+
+    outline: inherit;
+
+    @include small {
+      padding: 2px 0;
+      width: calc(100% - 50px);
+    }
+
+    @include extra-small {
+      padding: 2px 0;
+      width: calc(100% - 50px);
+    }
+
+    &:focus {
+      border-bottom: 1px solid #4D4D4D;
+    }
+
+    &::placeholder {
+      color: #9C9C9C;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.post {
+  &__banner {
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__titulo {
+    padding: 42px 0 10px 0;
+    margin-bottom: -3px;
+    text-align: center;
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+  }
+
+  &__info {
+    padding: 40px 0;
+    white-space: nowrap;
+    vertical-align: top;
+
+    @include mobile {
+      padding-bottom: 0;
+    }
+  }
+
+  &__tags {
+    display: inline-block;
+    white-space: normal;
+    overflow-wrap: break-word;
+    vertical-align: top;
+    width: calc(100% - 40px);
+
+    &__item {
+      display: inline-block;
+      margin-right: 10px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+      
+      &__label {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+    }
+  }
+
+  article {
+    font-family: $secondary-font;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    white-space: pre-line;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+
+      &.banner {
+        width: 850px;
+        margin-left: -70px;
+
+        @include large {
+          margin-left: -110px;
+        }
+
+        @include medium {
+          width: calc(100% + (110px * 2));
+          margin-left: -110px;
+        }
+
+        @include mobile {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

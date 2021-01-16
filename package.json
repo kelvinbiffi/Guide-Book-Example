@@ -1,0 +1,30 @@
+{
+  "name": "guide-book-example-consume",
+  "version": "1.0.0",
+  "author": "Kelvin Biffi",
+  "license": "ISC",
+  "scripts": {
+    "scss": "node-sass --include-path source source/css/style.scss build/style.min.css --output-style compressed --source-map true",
+    "postcss": "postcss --use autoprefixer -o build/style.min.css build/style.min.css",
+    "dev": "nodemon --ext scss --watch source --exec \"npm run build\"",
+    "build": "npm run scss & npm run postcss"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.pmweb.com.br/coding/pmweb/novo-site"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "postcss": "^7.0.32",
+    "postcss-cli": "^7.1.2",
+    "precss": "^4.0.0"
+  },
+  "browserslist": [
+    "> 2%",
+    "last 2 versions",
+    "IE 10"
+  ]
+}

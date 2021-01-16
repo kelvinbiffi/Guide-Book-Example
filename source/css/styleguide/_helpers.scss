@@ -1,0 +1,294 @@
+@include generate-helpers('font-weight', 'fw', 9, 100, '');
+@include generate-helpers('line-height', 'lh', 100, 1, 'px');
+@include generate-helpers('font-size', 'fs', 100, 1, 'px');
+@include generate-helpers('transition-duration', 'td', 20, 100, 'ms');
+
+@include generate-helpers('border-radius', 'br', 10, 5, 'px');
+
+@include generate-helpers('margin-top', 'mt', 20, 4, 'px');
+@include generate-helpers('margin-left', 'ml', 20, 4, 'px');
+@include generate-helpers('margin-bottom', 'mb', 20, 4, 'px');
+@include generate-helpers('margin-right', 'mr', 20, 4, 'px');
+
+@include generate-helpers('padding-top', 'pt', 20, 4, 'px');
+@include generate-helpers('padding-left', 'pl', 20, 4, 'px');
+@include generate-helpers('padding-bottom', 'pb', 20, 4, 'px');
+@include generate-helpers('padding-right', 'pr', 20, 4, 'px');
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.m-no-margin {
+  @media screen and (max-width: $medium) {
+    margin: 0 !important;
+  }
+}
+
+.m-no-padding {
+  @media screen and (max-width: $medium) {
+    padding: 0 !important;
+  }
+}
+
+/* Opacity */
+.op-5 {
+  opacity: 0.05;
+}
+
+.op-20 {
+  opacity: 0.2;
+}
+
+.op-40 {
+  opacity: 0.40;
+}
+
+.op-60 {
+  opacity: 0.60;
+}
+
+.op-80 {
+  opacity: 0.80;
+}
+
+// ESPAÇAMENTO
+
+.p-v-block {
+  padding: 100px 0;
+
+  @media screen and (max-width: $medium) {
+    padding: 42px 0;
+  }
+}
+
+/* Conteudo */
+.max-full-width {
+  max-width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: calc(100% / 2);
+}
+
+// HIDDEN
+
+@include mobile {
+  .visible-mobile {
+    display: inline-block;
+  }
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: $extra-large) {
+  .hidden-xl {
+    display: none;
+  }
+}
+@media screen and (min-width: $large) and (max-width: $extra-large) {
+  .hidden-l {
+    display: none;
+  }
+}
+@media screen and (min-width: $medium) and (max-width: $large) {
+  .hidden-m {
+    display: none;
+  }
+}
+@media screen and (min-width: $small) and (max-width: $medium) {
+  .hidden-s {
+    display: none;
+  }
+}
+@media screen and (max-width: $small) {
+  .hidden-xs {
+    display: none;
+  }
+}
+
+// VISIBLE
+
+@include desktop {
+  .visible-desktop {
+    display: inline-block;
+  }
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $extra-large) {
+  .visible-xl {
+    display: block;
+  }
+}
+@media screen and (min-width: $large) and (max-width: $extra-large) {
+  .visible-l {
+    display: block;
+  }
+}
+@media screen and (min-width: $medium) and (max-width: $large) {
+  .visible-m {
+    display: block;
+  }
+}
+@media screen and (min-width: $small) and (max-width: $medium) {
+  .visible-s {
+    display: block;
+  }
+}
+@media screen and (max-width: $small) {
+  .visible-xs {
+    display: block;
+  }
+}
+
+// TEXT
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.pre-line {
+  white-space: pre-line;
+}
+
+// ALIGNMENT
+.text-align-center {
+  text-align: center;
+}
+.text-align-left {
+  text-align: left;
+}
+.text-align-right {
+  text-align: right;
+}
+
+@include mobile {
+  .m-text-align-center {
+    text-align: center;
+  }
+  .m-text-align-left {
+    text-align: left;
+  }
+  .m-text-align-right {
+    text-align: right;
+  }
+}
+
+
+// CORES
+
+
+// FUNDO
+
+.b-branco {
+  background-color: $cor-branco;
+}
+.b-branco-turvo {
+  background-color: $cor-branco-turvo;
+}
+.b-preto {
+  background-color: $cor-preto;
+}
+.b-cinza {
+  background-color: $cor-cinza;
+}
+.b-cinza-claro {
+  background-color: $cor-cinza-claro;
+}
+.b-cinza-medio {
+  background-color: $cor-cinza-medio;
+}
+.b-cinza-escuro {
+  background-color: $cor-cinza-escuro;
+}
+
+.b-verde {
+  background-color: $cor-verde;
+}
+
+.b-azul {
+  background-color: $cor-azul;
+}
+
+.b-roxo {
+  background-color: $cor-roxo;
+}
+
+.b-rosa {
+  background-color: $cor-rosa;
+}
+
+.b-laranja {
+  background-color: $cor-laranja;
+}
+
+// COLOR
+
+.c-branco {
+  color: $cor-branco;
+}
+.c-branco-turvo {
+  color: $cor-branco-turvo;
+}
+.c-preto {
+  color: $cor-preto;
+}
+.c-cinza {
+  color: $cor-cinza;
+}
+.c-cinza-claro {
+  color: $cor-cinza-claro;
+}
+.c-cinza-medio {
+  color: $cor-cinza-medio;
+}
+.c-cinza-escuro {
+  color: $cor-cinza-escuro;
+}
+
+.c-verde {
+  color: $cor-verde;
+}
+
+.c-azul {
+  color: $cor-azul;
+}
+
+.c-roxo {
+  color: $cor-roxo;
+}
+
+.c-rosa {
+  color: $cor-rosa;
+}
+
+.c-laranja {
+  color: $cor-laranja;
+}
+
+
+
+// DISPLAY 
+
+.inline-block {
+  display: inline-block;
+}
+
+// VERTICAL
+
+.vertical-align-top {
+  vertical-align: top;
+}

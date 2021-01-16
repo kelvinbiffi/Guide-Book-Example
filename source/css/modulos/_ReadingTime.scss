@@ -1,0 +1,20 @@
+.reading-time {
+  display: inline-block;
+
+  &__relogio {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+  }
+
+  &__tempo {
+    display: inline-block;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 10px;
+  }
+}
