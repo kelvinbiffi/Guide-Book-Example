@@ -1,0 +1,18 @@
+.thumb-produto {
+  display: inline-block;
+  width: 24%;
+  background-color: $cor-cinza-claro;
+  padding: 20px;
+
+  .descricao {
+    font-size: 20px;
+    color: $cor-preto;
+  }
+}
+
+/*
+Modulos|Thumb Produto
+<div class="thumb-produto">
+  <p class="descricao">Descricao exemplo</p>
+</div>
+*/

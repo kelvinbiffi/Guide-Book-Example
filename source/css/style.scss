@@ -2,21 +2,10 @@
 
 @import "header";
 
-@import "./modulos/CampoBusca";
-@import "./modulos/Logo";
-@import "./modulos/MenuLink";
-@import "./modulos/PostCard";
-@import "./modulos/PostGrid";
-@import "./modulos/PostHighlights";
-@import "./modulos/PostMosaic";
-@import "./modulos/ReadingTime";
-@import "./modulos/Compartilhar";
-@import "./modulos/Newsletter";
+@import "./modulos/ThumbProduto";
+@import "./modulos/ListaProduto";
 
 @import "./pages/home";
-@import "./pages/post";
-@import "./pages/404";
-@import "./pages/categoria";
 
 @import "footer";
 

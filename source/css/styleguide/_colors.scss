@@ -1,25 +1,88 @@
-$cor-verde: #00D318;
-$cor-azul: #00AFCC;
-$cor-roxo: #A02BFF;
-$cor-rosa: #EA288C;
-$cor-laranja: #FF6D00;
+// CORES
 
-$cor-branco: #FFFFFF;
-$cor-branco-turvo: #FAFAFA;
-$cor-preto: #000000;
-$cor-cinza: #999999;
-$cor-cinza-claro: #DEDEDE;
-$cor-cinza-medio: #4D4D4D;
-$cor-cinza-escuro: #141414;
 
-$cor-branco-5: rgba($cor-branco, 0.05);
-$cor-branco-20: rgba($cor-branco, 0.20);
-$cor-branco-40: rgba($cor-branco, 0.40);
-$cor-branco-60: rgba($cor-branco, 0.60);
-$cor-branco-80: rgba($cor-branco, 0.80);
+// FUNDO
 
-$cor-preto-5: rgba($cor-preto, 0.05);
-$cor-preto-20: rgba($cor-preto, 0.20);
-$cor-preto-40: rgba($cor-preto, 0.40);
-$cor-preto-60: rgba($cor-preto, 0.60);
-$cor-preto-80: rgba($cor-preto, 0.80);
+.b-branco {
+  background-color: $cor-branco;
+}
+.b-branco-turvo {
+  background-color: $cor-branco-turvo;
+}
+.b-preto {
+  background-color: $cor-preto;
+}
+.b-cinza {
+  background-color: $cor-cinza;
+}
+.b-cinza-claro {
+  background-color: $cor-cinza-claro;
+}
+.b-cinza-medio {
+  background-color: $cor-cinza-medio;
+}
+.b-cinza-escuro {
+  background-color: $cor-cinza-escuro;
+}
+.b-verde {
+  background-color: $cor-verde;
+}
+.b-azul {
+  background-color: $cor-azul;
+}
+
+/*
+Modulos|Cores De Fundo
+<div class="exemplo__bloco sombra b-branco">b-branco</div>
+<div class="exemplo__bloco sombra b-branco-turvo">b-branco-turvo</div>
+<div class="exemplo__bloco sombra b-preto">b-preto</div>
+<div class="exemplo__bloco sombra b-cinza">b-cinza</div>
+<div class="exemplo__bloco sombra b-cinza-claro">b-cinza-claro</div>
+<div class="exemplo__bloco sombra b-cinza-medio">b-cinza-medio</div>
+<div class="exemplo__bloco sombra b-cinza-escuro">b-cinza-escuro</div>
+<div class="exemplo__bloco sombra b-verde">b-verde</div>
+<div class="exemplo__bloco sombra b-azul">b-azul</div>
+*/
+
+// COLOR
+
+.c-branco {
+  color: $cor-branco;
+}
+.c-branco-turvo {
+  color: $cor-branco-turvo;
+}
+.c-preto {
+  color: $cor-preto;
+}
+.c-cinza {
+  color: $cor-cinza;
+}
+.c-cinza-claro {
+  color: $cor-cinza-claro;
+}
+.c-cinza-medio {
+  color: $cor-cinza-medio;
+}
+.c-cinza-escuro {
+  color: $cor-cinza-escuro;
+}
+.c-verde {
+  color: $cor-verde;
+}
+.c-azul {
+  color: $cor-azul;
+}
+
+/*
+Modulos|Cores De Texto
+<div class="exemplo__bloco sombra c-branco">c-branco</div>
+<div class="exemplo__bloco sombra c-branco-turvo">c-branco-turvo</div>
+<div class="exemplo__bloco sombra c-preto">c-preto</div>
+<div class="exemplo__bloco sombra c-cinza">c-cinza</div>
+<div class="exemplo__bloco sombra c-cinza-claro">c-cinza-claro</div>
+<div class="exemplo__bloco sombra c-cinza-medio">c-cinza-medio</div>
+<div class="exemplo__bloco sombra c-cinza-escuro">c-cinza-escuro</div>
+<div class="exemplo__bloco sombra c-verde">c-verde</div>
+<div class="exemplo__bloco sombra c-azul">c-azul</div>
+*/

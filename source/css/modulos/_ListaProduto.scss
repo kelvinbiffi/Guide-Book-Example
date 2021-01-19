@@ -1,0 +1,16 @@
+.lista-produtos {
+  display: block;
+  background-color: $cor-preto;
+  padding: 30px;
+
+  .titulo {
+    color: $cor-branco;
+  }
+}
+
+/*
+Modulos|Lista Produtos
+<div class="lista-produtos">
+  <p class="titulo">Titulo exemplo</p>
+</div>
+*/
