@@ -1,9 +1,9 @@
-const { GuideBook } = require('C:/PROJETOS/Guide-Book/index.js');
+const GuideBook = require('guide-book-generator');
 
 const settings = {
   style: 'build/style.min.css',
   source: 'source/css',
-  output: 'guidebook',
+  output: 'guidebook/index.html',
 }
 
 const guideBook = new GuideBook();
