@@ -1,10 +1,38 @@
 const GuideBook = require('guide-book-generator');
+let guideBook;
 
-const settings = {
-  style: 'build/style.min.css',
-  source: 'source/css',
-  output: 'guidebook/index.html',
+// SCSS EXAMPLE
+
+const scss_settings = {
+  style: 'build/scss/style.css',
+  source: 'source/scss',
+  output: 'guidebook/scss.html',
 }
 
-const guideBook = new GuideBook();
-guideBook.generate(settings);
+guideBook = new GuideBook();
+guideBook.generate(scss_settings);
+
+
+// LESS EXAMPLE
+
+const less_settings = {
+  style: 'build/less/style.css',
+  source: 'source/less',
+  output: 'guidebook/less.html',
+}
+
+guideBook = new GuideBook();
+guideBook.generate(less_settings);
+
+
+// STYLUS STYLUS
+
+const stylus_settings = {
+  style: 'build/stylus/style.css',
+  source: 'source/stylus',
+  output: 'guidebook/stylus.html',
+}
+
+guideBook = new GuideBook();
+guideBook.generate(stylus_settings);
+

@@ -1,0 +1,120 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@primary-font: 'Roboto Mono', monospace;
+
+@white-color: #FFFFFF;
+@black-color: #000000;
+
+@primary-color: #6d3b54;
+@seconday-color: #ddbbc7;
+
+// HELPERS
+
+.shadow {
+  box-shadow: 0 4px 44px 0 rgba(@black-color, 0.1);
+}
+/*GUIDE
+Helpers|Shadow
+<div class="gb-circle shadow b-branco">shadow</div>
+*/
+
+// COLORS
+
+.c-primary {
+  color: @primary-color;
+}
+.c-seconday {
+  color: @seconday-color;
+}
+.c-white {
+  color: @white-color;
+}
+.c-black {
+  color: @black-color;
+}
+
+/*GUIDE
+Helpers|Color Text
+<div class="gb-circle shadow c-primary">c-primary</div>
+<div class="gb-circle shadow c-seconday">c-seconday</div>
+<div class="gb-circle shadow c-white">c-white</div>
+<div class="gb-circle shadow c-black">c-black</div>
+*/
+
+.b-white {
+  background-color: @white-color;
+}
+.b-black {
+  background-color: @black-color;
+}
+.b-primary {
+  background-color: @primary-color;
+}
+.b-seconday {
+  background-color: @seconday-color;
+}
+
+/*GUIDE
+Helpers|Background Color
+<div class="gb-circle shadow b-primary">b-primary</div>
+<div class="gb-circle shadow b-seconday">b-seconday</div>
+<div class="gb-circle shadow b-white">b-white</div>
+<div class="gb-circle shadow b-black">b-black</div>
+*/
+
+
+// TYPOGRAPH
+
+.h1 {
+  font-family: @primary-font;
+  font-size: 40px;
+}
+/*GUIDE
+Typograph|Header 1
+<h1 class="h1">
+  Header 1
+</h1>
+*/
+
+.h2 {
+  font-family: @primary-font;
+  font-size: 30px;
+}
+/*GUIDE
+Typograph|Header 1
+<h2 class="h2">
+  Header 2
+</h2>
+*/
+
+.paragraph {
+  font-family: @primary-font;
+  font-size: 14;
+}
+/*GUIDE
+Typograph|Paragraph
+<p class="paragraph">
+  Paragraph Example
+</p>
+*/
+
+
+.block-example {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+
+  &__content {
+    box-sizing: border-box;
+    padding: 20px 0;
+  }
+}
+/*GUIDE
+Component|Block Example
+<div class="block-example">
+  <h1 class="h1">Block Example Title</h1>
+  <p class="block-example__content p">Description of a Block Example</p>
+</div>
+*/

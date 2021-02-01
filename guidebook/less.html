@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Guide Book</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="https://kelvins.cc/out/assets/plugin/prism.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+  <style>
+    .gb-font {
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .gb-h1 {
+      font-size: 42px;
+      padding: 10px 0;
+    }
+    .gb-h2 {
+      font-size: 32px;
+      margin: 0 0 20px 0;
+      text-decoration: underline;
+    }
+    .gb-h2::before{
+      content: '';
+      display: block;
+      position: relative;
+      margin-top: -60px;
+      visibility: hidden;
+      height: 120px;
+    }
+    .gb-h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+    .gb-header {
+      box-shadow: 10px 0px 8px 4px rgba(0,0,0,0.15);
+      background-color: #F2F2F2;
+      padding: 0 30px 20px 30px;
+      position: fixed;
+      left: 0; top: 0;
+      width: 100%;
+      z-index: 9;
+    }
+    .gb-header .category-item {
+      display: inline-block;
+      margin: 0 15px 0 0;
+    }
+    .gb-header .category-item__link {
+      color: #333333;
+    }
+    .guide-book {
+      background-color: #FFFFFF;
+    }
+    .guide-book__body {
+      padding: 90px 40px 40px 40px;
+    }
+    .gb-circle {
+      display: inline-block;
+      height: 120px;
+      width: 120px;
+      padding: 50px 10px;
+      margin: 5px;
+      border-radius: 100px;
+      text-align: center;
+      vertical-align: top;
+    }
+  </style>
+  <style>@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAeW9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrnnAOW9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrk5AOW9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnAOW9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlVAOW9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrm5B-W9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrmAB-W9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vuPQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_XvqPQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_gPqPQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vqPQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_7PqPQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_AP2PQw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_Of2PQw.ttf) format('truetype');
+}
+.shadow {
+  box-shadow: 0 4px 44px 0 rgba(0, 0, 0, 0.1);
+}
+/*GUIDE
+Helpers|Shadow
+<div class="gb-circle shadow b-branco">shadow</div>
+*/
+.c-primary {
+  color: #6d3b54;
+}
+.c-seconday {
+  color: #ddbbc7;
+}
+.c-white {
+  color: #FFFFFF;
+}
+.c-black {
+  color: #000000;
+}
+/*GUIDE
+Helpers|Color Text
+<div class="gb-circle shadow c-primary">c-primary</div>
+<div class="gb-circle shadow c-seconday">c-seconday</div>
+<div class="gb-circle shadow c-white">c-white</div>
+<div class="gb-circle shadow c-black">c-black</div>
+*/
+.b-white {
+  background-color: #FFFFFF;
+}
+.b-black {
+  background-color: #000000;
+}
+.b-primary {
+  background-color: #6d3b54;
+}
+.b-seconday {
+  background-color: #ddbbc7;
+}
+/*GUIDE
+Helpers|Background Color
+<div class="gb-circle shadow b-primary">b-primary</div>
+<div class="gb-circle shadow b-seconday">b-seconday</div>
+<div class="gb-circle shadow b-white">b-white</div>
+<div class="gb-circle shadow b-black">b-black</div>
+*/
+.h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 40px;
+}
+/*GUIDE
+Typograph|Header 1
+<h1 class="h1">
+  Header 1
+</h1>
+*/
+.h2 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 30px;
+}
+/*GUIDE
+Typograph|Header 1
+<h2 class="h2">
+  Header 2
+</h2>
+*/
+.paragraph {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14;
+}
+/*GUIDE
+Typograph|Paragraph
+<p class="paragraph">
+  Paragraph Example
+</p>
+*/
+.block-example {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+}
+.block-example__content {
+  box-sizing: border-box;
+  padding: 20px 0;
+}
+/*GUIDE
+Component|Block Example
+<div class="block-example">
+  <h1 class="h1">Block Example Title</h1>
+  <p class="block-example__content p">Description of a Block Example</p>
+</div>
+*/
+</style>
+</head>
+<body class="guide-book">
+  <header class="gb-header">
+    <h1 class="gb-font gb-h1">Guide Book</h1>
+    <ul class="guide-book__header gb-menu">
+      
+            <li class="category-item">
+                <a class="category-item__link gb-font" href="#helpers">Helpers</a>
+            </li>
+        
+            <li class="category-item">
+                <a class="category-item__link gb-font" href="#typograph">Typograph</a>
+            </li>
+        
+            <li class="category-item">
+                <a class="category-item__link gb-font" href="#component">Component</a>
+            </li>
+        
+    </ul>
+  </header>
+
+  <main class="guide-book__body">
+    
+            <hr>
+            <section id="helpers" class="category-section">
+                <h2 class="gb-font gb-h2">Helpers</h2>
+        
+                <article class="category-section__example" id="shadow">
+                    <h3 class="gb-font gb-h3">Shadow</h3>
+                    <pre class="exemplo__code line-numbers">
+                        ...
+                        <code class="language-markup">
+                        <div class="gb-circle shadow b-branco">shadow</div>
+                        </code>
+                        ...
+                    </pre>
+                </article>
+            
+                <article class="category-section__example" id="color-text">
+                    <h3 class="gb-font gb-h3">Color Text</h3>
+                    <pre class="exemplo__code line-numbers">
+                        ...
+                        <code class="language-markup">
+                        <div class="gb-circle shadow c-primary">c-primary</div>
+<div class="gb-circle shadow c-seconday">c-seconday</div>
+<div class="gb-circle shadow c-white">c-white</div>
+<div class="gb-circle shadow c-black">c-black</div>
+                        </code>
+                        ...
+                    </pre>
+                </article>
+            
+                <article class="category-section__example" id="background-color">
+                    <h3 class="gb-font gb-h3">Background Color</h3>
+                    <pre class="exemplo__code line-numbers">
+                        ...
+                        <code class="language-markup">
+                        <div class="gb-circle shadow b-primary">b-primary</div>
+<div class="gb-circle shadow b-seconday">b-seconday</div>
+<div class="gb-circle shadow b-white">b-white</div>
+<div class="gb-circle shadow b-black">b-black</div>
+                        </code>
+                        ...
+                    </pre>
+                </article>
+            
+            </section>
+        
+            <hr>
+            <section id="typograph" class="category-section">
+                <h2 class="gb-font gb-h2">Typograph</h2>
+        
+                <article class="category-section__example" id="header-1">
+                    <h3 class="gb-font gb-h3">Header 1</h3>
+                    <pre class="exemplo__code line-numbers">
+                        ...
+                        <code class="language-markup">
+                        <h1 class="h1">
+  Header 1
+</h1>
+                        </code>
+                        ...
+                    </pre>
+                </article>
+            
+                <article class="category-section__example" id="header-1">
+                    <h3 class="gb-font gb-h3">Header 1</h3>
+                    <pre class="exemplo__code line-numbers">
+                        ...
+                        <code class="language-markup">
+                        <h2 class="h2">
+  Header 2
+</h2>
+                        </code>
+                        ...
+                    </pre>
+                </article>
+            
+                <article class="category-section__example" id="paragraph">
+                    <h3 class="gb-font gb-h3">Paragraph</h3>
+                    <pre class="exemplo__code line-numbers">
+                        ...
+                        <code class="language-markup">
+                        <p class="paragraph">
+  Paragraph Example
+</p>
+                        </code>
+                        ...
+                    </pre>
+                </article>
+            
+            </section>
+        
+            <hr>
+            <section id="component" class="category-section">
+                <h2 class="gb-font gb-h2">Component</h2>
+        
+                <article class="category-section__example" id="block-example">
+                    <h3 class="gb-font gb-h3">Block Example</h3>
+                    <pre class="exemplo__code line-numbers">
+                        ...
+                        <code class="language-markup">
+                        <div class="block-example">
+  <h1 class="h1">Block Example Title</h1>
+  <p class="block-example__content p">Description of a Block Example</p>
+</div>
+                        </code>
+                        ...
+                    </pre>
+                </article>
+            
+            </section>
+        
+  </main>
+
+  <footer class="guide-book__footer">
+    Footer
+  </footer>
+  <script src="https://kelvins.cc/out/assets/plugin/prism.js"></script>
+  <script>
+  (function () {
+    var cache = {
+      CodeExamples: document.querySelectorAll('.exemplo__code'),
+      PrismMarkupExamples: document.querySelectorAll('.language-markup'),
+    };
+
+    [].slice.call(cache.CodeExamples).forEach((example) => {
+      var codeExample = example.querySelector('code').innerHTML;
+      example.insertAdjacentHTML("BeforeBegin", `
+        ${codeExample}
+
+        <br>
+      `);
+    });
+
+    [].slice.call(cache.PrismMarkupExamples).forEach((example) => {
+      var innerExample = example.innerHTML.replace(/</g, '&lt').replace(/>/g, '&gt');
+      example.innerHTML = innerExample;
+    });
+  })();
+  </script>
+</body>
+</html>
