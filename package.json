@@ -7,7 +7,7 @@
     "scss": "node-sass --include-path source source/scss/style.scss build/scss/style.css",
     "less": "lessc source/less/style.less build/less/style.css",
     "stylus": "stylus source/stylus/style.styl -o build/stylus/style.css",
-    "build": "npm run scss && npm run less && npm run stylus"
+    "build": "npm run scss && npm run less && npm run stylus && node guideBook"
   },
   "private": true,
   "repository": {
@@ -15,7 +15,7 @@
     "url": "https://github.com/kelvinbiffi/Guide-Book-Example/"
   },
   "devDependencies": {
-    "guide-book-generator": "^1.0.0",
+    "guide-book-generator": "^1.1.0",
     "less": "^4.1.1",
     "node-sass": "^4.14.1",
     "stylus": "^0.54.8"
