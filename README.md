@@ -5,7 +5,7 @@ Example of how consume [Guide Book Package](https://github.com/kelvinbiffi/Guide
 
 ## HOW TO USE
 
-See below how to use [Guide Book](https://github.com/kelvinbiffi/Guide-Book) with examples
+See below how to use [Guide Book](https://www.npmjs.com/package/guide-book-generator) with examples
 
 ------------------------
 
