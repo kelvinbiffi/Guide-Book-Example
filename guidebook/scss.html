@@ -130,6 +130,21 @@
       vertical-align: top;
     }
   </style>
+  <style>
+    :root { --bg:#ffffff; --text:#1f2937; --muted:#6b7280; --card:#ffffff; --border:#e5e7eb; --primary:#6d3b54; --secondary:#ddbbc7; --header-bg:#f9fafb; --link:#374151; }
+    .theme-dark { --bg:#0b1020; --text:#e5e7eb; --muted:#9ca3af; --card:#0f172a; --border:#1f2937; --header-bg:#0b1020; --link:#e5e7eb; }
+    .guide-book { background: var(--bg); color: var(--text); }
+    .gb-header { background: var(--header-bg); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    .gb-header__gb-menu { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+    .gb-header .category-item__link { color: var(--link); text-decoration:none; padding:6px 10px; border-radius:8px; transition: background-color .2s ease; }
+    .gb-header .category-item__link:hover { background: rgba(0,0,0,.06); }
+    .category-item__link.active { background: rgba(109,59,84,0.15); }
+    .theme-toggle { margin-left:auto; display:inline-flex; align-items:center; gap:8px; background: var(--card); color: var(--text); border:1px solid var(--border); border-radius:999px; padding:6px 12px; cursor:pointer; font-size:14px; }
+    .guide-book__body { padding: 140px 16px 60px; max-width:1100px; margin:0 auto; }
+    .guide-book__footer { border-top:1px solid var(--border); padding:40px 16px; }
+    .guide-book__footer__text { color: var(--muted); font-size:14px; }
+    .category-section__example pre { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; overflow:auto; }
+  </style>
   <style>@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 .shadow {
   box-shadow: 0 4px 44px 0 rgba(0, 0, 0, 0.1); }
@@ -228,6 +243,7 @@ Component|Block Example
   <header class="gb-header">
     <h1 class="gb-font gb-h1">Guide Book</h1>
     <ul class="gb-header__gb-menu">
+      <button class="theme-toggle gb-font" id="themeToggle" aria-label="Toggle theme">🌞 Light</button>
       
             <li class="category-item">
                 <a class="category-item__link gb-font" data-anchor="helpers" href="#helpers">Helpers</a>
@@ -441,9 +457,33 @@ Component|Block Example
     });
 
     [].slice.call(cache.PrismMarkupExamples).forEach((example) => {
-      var innerExample = example.innerHTML.replace(/</g, '&lt').replace(/>/g, '&gt');
+      var innerExample = example.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;');
       example.innerHTML = innerExample;
     });
+    // Active link highlight
+    var sectionAnchors = [].slice.call(document.querySelectorAll('.category-section'));
+    var navLinks = [].slice.call(cache.allCatagoryItems);
+    function setActiveLink() {
+      var fromTop = (document.documentElement.scrollTop || document.body.scrollTop) + 170;
+      var current = sectionAnchors.reduce(function(prev, sec){ return sec.offsetTop < fromTop ? sec : prev; }, sectionAnchors[0]);
+      if (!current) return;
+      var id = current.getAttribute('id');
+      navLinks.forEach(function(a){
+        var isActive = a.getAttribute('href') === '#'+id || a.dataset.anchor === id;
+        if (isActive) a.classList.add('active'); else a.classList.remove('active');
+      });
+    }
+    document.addEventListener('scroll', setActiveLink); setActiveLink();
+    // Theme toggle
+    var themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var savedTheme = localStorage.getItem('gb-theme');
+      var initialDark = savedTheme ? savedTheme === 'dark' : prefersDark;
+      function applyTheme(dark){ document.documentElement.classList.toggle('theme-dark', dark); themeToggle.textContent = dark ? '🌙 Dark' : '🌞 Light'; localStorage.setItem('gb-theme', dark ? 'dark' : 'light'); }
+      applyTheme(initialDark);
+      themeToggle.addEventListener('click', function(){ var isDark = document.documentElement.classList.toggle('theme-dark'); themeToggle.textContent = isDark ? '🌙 Dark' : '🌞 Light'; localStorage.setItem('gb-theme', isDark ? 'dark' : 'light'); });
+    }
   })();
   </script>
 </body>
